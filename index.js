@@ -36,6 +36,23 @@ walker.on('end', function () {
     //   console.log(videos);
 });
 
+var ffmpeg = require('fluent-ffmpeg');
+var sys = require('sys');
+
+var proc = new ffmpeg('1.mp4')
+    .withSize('120x90')
+    .takeScreenshots({ count: 1, timemarks: [ '00:00:02.000', '6' ] }, __dirname, function(err) {
+        console.log('screenshotse saved')
+    });
+
+/*var thumbler = require('video-thumb');
+
+thumbler.extract('1.mp4', 'snapshot.png', '00:00:22', '200x125', function(){
+
+    console.log('snapshot saved to snapshot.png (200x125) with a frame at 00:00:22');
+
+});*/
+
 app.get('/', function (req, res) {
     res.send(videos);
 });

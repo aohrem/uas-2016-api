@@ -21,6 +21,7 @@
   "homepage": "https://github.com/aohrem/uas-2016-api#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "fluent-ffmpeg": "^2.1.0",
     "walk": "^2.3.9"
   }
 }
